@@ -1,3 +1,4 @@
 # swift-path-tagged
 
-Tagged integration for the Path domain.
+Owns Path × Tagged integration: Path namespace aliases and ownership-preserving
+construction, inspection, and consuming extraction for tagged paths.

@@ -19,7 +19,7 @@ let package = Package(
     ],
     dependencies: [
         .package(
-            url: "https://github.com/swift-molecules/swift-path.git",
+            url: "https://github.com/swift-atoms/swift-path.git",
             branch: "main"
         ),
         .package(
@@ -51,7 +51,12 @@ let package = Package(
         ),
         .testTarget(
             name: "Path Tagged Tests",
-            dependencies: ["Path Tagged"]
+            dependencies: [
+                "Path Tagged",
+                .product(name: "Path", package: "swift-path"),
+                .product(name: "Tagged", package: "swift-tagged"),
+                .product(name: "String", package: "swift-string"),
+            ]
         ),
     ],
     swiftLanguageModes: [.v6]

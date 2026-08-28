@@ -1,8 +1,8 @@
 #if PATH_AVAILABLE && (os(macOS) || os(iOS) || os(tvOS) || os(watchOS) || os(visionOS) || os(Linux) || os(Android) || os(OpenBSD) || os(Windows))
 
     public import Path
-    public import Tagged
     public import String
+    public import Tagged
 
     extension Tagged where Underlying == Path, Tag: ~Copyable & ~Escapable {
 
@@ -29,7 +29,7 @@
         }
 
         @inlinable
-        public init(copying view: borrowing String.String.Borrowed) {
+        public init(copying view: borrowing _CString.Borrowed) {
             self.init(_unchecked: Path(copying: view))
         }
 
